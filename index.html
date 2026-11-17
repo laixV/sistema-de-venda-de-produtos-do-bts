@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#100814">
+    <meta name="description" content="Bangtan House, loja pessoal de álbuns e colecionáveis do BTS. Entre ou crie sua conta.">
+    <title>Bangtan House · Entrar</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23160b22'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23c77dff'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <noscript>
+      <p class="noscript">Ative o JavaScript para entrar ou criar sua conta.</p>
+    </noscript>
+
+    <div class="stage">
+      <aside class="brand">
+        <span class="watermark" aria-hidden="true">07</span>
+        <div class="brand-top">
+          <div class="thread" aria-hidden="true"></div>
+          <p class="kicker">Loja de fã</p>
+        </div>
+
+        <div class="brand-copy">
+          <h1>
+            <span>Bangtan</span>
+            <span class="house">House</span>
+          </h1>
+          <p class="tagline">Álbuns, lightsticks e photocards para quem cresceu com as sete vozes.</p>
+        </div>
+
+        <div class="brand-bottom">
+          <ul class="records" aria-label="Alguns itens da loja">
+            <li class="record record-a">
+              <span class="record-no">01 · Álbum</span>
+              <strong>Proof</strong>
+              <!--<em>Anthology</em> -->
+            </li>
+            <li class="record record-b">
+              <span class="record-no">02 · Photocard</span>
+              <strong>Love Yourself</strong>
+              <!--<em>Tear</em> -->
+            </li>
+            <li class="record record-c">
+              <span class="record-no">03 · Lightstick</span>
+              <strong>Army Bomb</strong>
+              <!--<em>Colecionável</em> -->
+            </li>
+          </ul>
+          <p class="disclaimer">Projeto pessoal. Esta não é a loja oficial do BTS.</p>
+        </div>
+      </aside>
+
+      <main class="panel">
+        <section id="view-auth" class="view">
+          <div class="tabs" role="tablist" aria-label="Acesso">
+            <button type="button" role="tab" id="tab-login" aria-selected="true" aria-controls="form-login" data-tab="login">Entrar</button>
+            <button type="button" role="tab" id="tab-register" aria-selected="false" aria-controls="form-register" data-tab="register">Criar conta</button>
+          </div>
+
+          <h2 id="auth-title" tabindex="-1">Entre para continuar</h2>
+          <p class="lede" id="auth-lede">A vitrine de álbuns e colecionáveis abre depois do acesso.</p>
+
+          <form id="form-login" role="tabpanel" aria-labelledby="tab-login" novalidate>
+            <p id="login-banner" class="banner" role="status" hidden></p>
+
+            <div class="field">
+              <label for="login-email">E-mail</label>
+              <input id="login-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" spellcheck="false">
+              <small id="login-email-error" class="field-error" aria-live="polite"></small>
+            </div>
+
+            <div class="field">
+              <label for="login-password">Senha</label>
+              <div class="control">
+                <input id="login-password" name="password" type="password" autocomplete="current-password" maxlength="72">
+                <button type="button" class="icon-button" data-toggle-password="login-password" aria-label="Mostrar senha" aria-pressed="false">
+                  <svg class="icon-show" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <svg class="icon-hide" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 3l18 18"></path>
+                    <path d="M10.6 6.2A10.7 10.7 0 0 1 12 6c6.5 0 10 6 10 6a18.4 18.4 0 0 1-3.2 3.8"></path>
+                    <path d="M6.1 6.1C3.7 7.8 2 12 2 12s3.5 7 10 7a10.8 10.8 0 0 0 4.1-.8"></path>
+                    <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"></path>
+                  </svg>
+                </button>
+              </div>
+              <small id="login-password-error" class="field-error" aria-live="polite"></small>
+            </div>
+
+            <button type="submit" class="button-primary">Entrar</button>
+            <p class="switch">Ainda não tem conta? <button type="button" data-tab="register">Criar conta</button></p>
+          </form>
+
+          <form id="form-register" role="tabpanel" aria-labelledby="tab-register" hidden novalidate>
+            <p id="register-banner" class="banner" role="status" hidden></p>
+
+            <div class="field">
+              <label for="register-name">Nome</label>
+              <input id="register-name" name="name" type="text" autocomplete="name" maxlength="60">
+              <small id="register-name-error" class="field-error" aria-live="polite"></small>
+            </div>
+
+            <div class="field">
+              <label for="register-email">E-mail</label>
+              <input id="register-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" spellcheck="false">
+              <small id="register-email-error" class="field-error" aria-live="polite"></small>
+            </div>
+
+            <div class="field">
+              <label for="register-password">Senha</label>
+              <div class="control">
+                <input id="register-password" name="password" type="password" autocomplete="new-password" maxlength="72">
+                <button type="button" class="icon-button" data-toggle-password="register-password" aria-label="Mostrar senha" aria-pressed="false">
+                  <svg class="icon-show" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <svg class="icon-hide" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 3l18 18"></path>
+                    <path d="M10.6 6.2A10.7 10.7 0 0 1 12 6c6.5 0 10 6 10 6a18.4 18.4 0 0 1-3.2 3.8"></path>
+                    <path d="M6.1 6.1C3.7 7.8 2 12 2 12s3.5 7 10 7a10.8 10.8 0 0 0 4.1-.8"></path>
+                    <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"></path>
+                  </svg>
+                </button>
+              </div>
+              <small id="register-password-error" class="field-error" aria-live="polite"></small>
+            </div>
+
+            <div class="field">
+              <label for="register-confirm">Confirmar senha</label>
+              <div class="control">
+                <input id="register-confirm" name="confirm" type="password" autocomplete="new-password" maxlength="72">
+                <button type="button" class="icon-button" data-toggle-password="register-confirm" aria-label="Mostrar senha" aria-pressed="false">
+                  <svg class="icon-show" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <svg class="icon-hide" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 3l18 18"></path>
+                    <path d="M10.6 6.2A10.7 10.7 0 0 1 12 6c6.5 0 10 6 10 6a18.4 18.4 0 0 1-3.2 3.8"></path>
+                    <path d="M6.1 6.1C3.7 7.8 2 12 2 12s3.5 7 10 7a10.8 10.8 0 0 0 4.1-.8"></path>
+                    <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"></path>
+                  </svg>
+                </button>
+              </div>
+              <small id="register-confirm-error" class="field-error" aria-live="polite"></small>
+            </div>
+
+            <button type="submit" class="button-primary">Criar conta</button>
+            <p class="switch">Já tem uma conta? <button type="button" data-tab="login">Entrar</button></p>
+          </form>
+
+        <!--<p class="fine">Seus dados ficam só neste navegador, neste computador.</p> -->
+        </section>
+
+        <section id="view-home" class="view view-home customer-shell" hidden>
+          <header class="customer-top">
+            <p class="app-logo">Bangtan <em>House</em></p>
+            <nav class="customer-nav" aria-label="Menu da cliente">
+              <button type="button" data-shop="vitrine" aria-current="page">Produtos</button>
+              <button type="button" data-shop="pedidos">Pedidos</button>
+              <button type="button" data-shop="carrinho">Carrinho <span id="cart-count" class="cart-count" hidden>0</span></button>
+            </nav>
+            <button type="button" class="button-secondary" data-logout>Sair</button>
+          </header>
+
+          <div class="customer-content">
+            <section id="painel-vitrine" class="shop-panel">
+              <h2 id="vitrine-heading" tabindex="-1">Produtos</h2>
+              <p id="cliente-ola" class="lede"></p>
+
+              <div class="filters">
+                <div class="field">
+                  <label for="filtro-nome">Nome</label>
+                  <input id="filtro-nome" type="search" placeholder="Comece a digitar o nome" autocomplete="off">
+                </div>
+                <div class="field">
+                  <label for="filtro-min">Valor mínimo</label>
+                  <input id="filtro-min" type="text" inputmode="numeric" placeholder="R$ 0,00" autocomplete="off">
+                </div>
+                <div class="field">
+                  <label for="filtro-max">Valor máximo</label>
+                  <input id="filtro-max" type="text" inputmode="numeric" placeholder="R$ 0,00" autocomplete="off">
+                </div>
+              </div>
+              <div id="filtro-categorias" class="filter-chips" role="group" aria-label="Categoria"></div>
+              <ul id="vitrine-lista" class="vitrine"></ul>
+            </section>
+
+            <section id="painel-carrinho" class="shop-panel cart-panel" hidden>
+              <h2 id="carrinho-heading" tabindex="-1">Carrinho</h2>
+              <div id="carrinho-aviso" class="banner" role="status" hidden>
+                <span></span>
+                <button type="button" class="banner-close" aria-label="Fechar mensagem" hidden>×</button>
+              </div>
+              <ul id="lista-carrinho" class="cart-list"></ul>
+              <p id="carrinho-total" class="cart-total" hidden></p>
+              <button type="button" class="button-primary" id="seguir-compra">Seguir para compra</button>
+              <div id="pix-box" class="pix-box" hidden>
+                <h3>Pagamento por Pix</h3>
+                <p id="pix-instrucao">Copie o código e pague no aplicativo do seu banco. O pagamento desta loja é somente por Pix.</p>
+                <p id="pix-expira" class="pix-expira"></p>
+                <p id="pix-code" class="pix-code"></p>
+                <button type="button" class="button-secondary" id="pix-copiar">Copiar código</button>
+              </div>
+            </section>
+
+            <section id="painel-pedidos" class="shop-panel orders-panel" hidden>
+              <h2 id="pedidos-heading" tabindex="-1">Pedidos</h2>
+              <ul id="lista-pedidos" class="order-list"></ul>
+            </section>
+          </div>
+        </section>
+
+        <section id="view-admin" class="view view-admin admin-shell" hidden>
+          <aside class="side-menu">
+            <div class="side-head">
+              <p class="app-logo">Bangtan <em>House</em></p>
+              <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="true" aria-controls="side-nav">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 6l-6 6 6 6"></path>
+                </svg>
+                <span>Recolher</span>
+              </button>
+            </div>
+            <nav class="side-nav" id="side-nav" aria-label="Menu da administradora">
+              <button type="button" data-menu="produtos" aria-current="page">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 4h8v3H8z"></path>
+                  <path d="M6 7h12v13H6z"></path>
+                </svg>
+                <span>Cadastro de produtos</span>
+              </button>
+              <button type="button" data-menu="categorias">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 12l8-8h8v8l-8 8z"></path>
+                  <circle cx="16" cy="8" r="1"></circle>
+                </svg>
+                <span>Cadastro de categorias</span>
+              </button>
+              <button type="button" data-menu="estoque">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 8l8-4 8 4-8 4-8-4z"></path>
+                  <path d="M4 12l8 4 8-4"></path>
+                  <path d="M4 16l8 4 8-4"></path>
+                </svg>
+                <span>Estoque</span>
+              </button>
+            </nav>
+          </aside>
+
+          <header class="admin-top">
+            <button type="button" class="button-secondary" data-logout>Sair</button>
+          </header>
+
+          <div class="admin-content">
+            <div id="painel-produtos">
+              <div class="app-body">
+                <div>
+                  <h2 id="admin-heading" tabindex="-1">Cadastrar produto</h2>
+                  <p id="produto-lede" class="lede">Nome, categoria, descrição, valor e foto do produto.</p>
+
+                  <form id="form-produto" novalidate>
+                    <div id="produto-banner" class="banner" role="status" hidden>
+                      <span></span>
+                      <button type="button" class="banner-close" aria-label="Fechar mensagem" hidden>×</button>
+                    </div>
+
+                    <div class="field">
+                      <label for="produto-nome">Nome</label>
+                      <input id="produto-nome" name="nome" type="text" maxlength="80" autocomplete="off">
+                      <small id="produto-nome-error" class="field-error" aria-live="polite"></small>
+                    </div>
+
+                    <div class="field">
+                      <label for="categoria-botao">Categoria</label>
+                      <div class="select-field">
+                        <select id="produto-categoria" class="native-select" name="categoria" tabindex="-1" aria-hidden="true">
+                          <option value="">Selecione a categoria</option>
+                        </select>
+                        <button type="button" class="select-button is-placeholder" id="categoria-botao" aria-haspopup="listbox" aria-expanded="false" aria-controls="categoria-lista">
+                          <span id="categoria-rotulo">Selecione a categoria</span>
+                          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+                        </button>
+                        <ul id="categoria-lista" class="select-list" role="listbox" hidden></ul>
+                      </div>
+                      <small id="produto-categoria-error" class="field-error" aria-live="polite"></small>
+                    </div>
+
+                    <div class="field">
+                      <label for="produto-descricao">Descrição</label>
+                      <textarea id="produto-descricao" name="descricao" maxlength="400" rows="4"></textarea>
+                      <small id="produto-descricao-error" class="field-error" aria-live="polite"></small>
+                    </div>
+
+                    <div class="field">
+                      <label for="produto-valor">Valor</label>
+                      <input id="produto-valor" name="valor" type="text" inputmode="numeric" maxlength="20" placeholder="R$ 0,00" autocomplete="off">
+                      <small id="produto-valor-error" class="field-error" aria-live="polite"></small>
+                    </div>
+
+                    <div class="field">
+                      <label for="produto-imagem">Imagem</label>
+                      <div class="file-field">
+                        <span id="produto-imagem-nome">Escolher imagem</span>
+                        <input id="produto-imagem" name="imagem" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+                      </div>
+                      <small id="produto-imagem-error" class="field-error" aria-live="polite"></small>
+                    </div>
+
+                    <img id="produto-preview" class="preview" alt="" hidden>
+
+                    <div class="form-actions">
+                      <button type="submit" class="button-primary">Cadastrar produto</button>
+                      <button type="button" class="button-secondary" id="produto-cancelar" hidden>Cancelar</button>
+                    </div>
+                  </form>
+                </div>
+                <div>
+                  <h3 class="admin-list-title">Produtos cadastrados</h3>
+                  <ul id="lista-produtos" class="produto-lista"></ul>
+                </div>
+              </div>
+            </div>
+
+            <div id="painel-categorias" hidden>
+              <div class="app-body">
+                <div>
+                  <h2 id="categoria-heading" tabindex="-1">Cadastrar categoria</h2>
+                  <p id="categoria-lede" class="lede">O nome aparece na lista e no cadastro de produto.</p>
+
+                  <form id="form-categoria" novalidate>
+                    <div id="categoria-banner" class="banner" role="status" hidden>
+                      <span></span>
+                      <button type="button" class="banner-close" aria-label="Fechar mensagem" hidden>×</button>
+                    </div>
+
+                    <div class="field">
+                      <label for="categoria-nome">Nome</label>
+                      <input id="categoria-nome" name="nome" type="text" maxlength="40" autocomplete="off">
+                      <small id="categoria-nome-error" class="field-error" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-actions">
+                      <button type="submit" class="button-primary">Cadastrar categoria</button>
+                      <button type="button" class="button-secondary" id="categoria-cancelar" hidden>Cancelar</button>
+                    </div>
+                  </form>
+                </div>
+                <div>
+                  <h3 class="admin-list-title">Categorias cadastradas</h3>
+                  <ul id="lista-categorias" class="produto-lista"></ul>
+                </div>
+              </div>
+            </div>
+
+            <section id="painel-estoque" hidden>
+              <h2>Estoque</h2>
+              <p class="lede">Esta área fica reservada. O controle de estoque entra numa próxima etapa.</p>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="confirm-dialog" class="confirm" hidden>
+      <div class="confirm-card" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+        <h2 id="confirm-title">Excluir</h2>
+        <p id="confirm-text"></p>
+        <div class="confirm-actions">
+          <button type="button" class="button-secondary" id="confirm-cancel">Cancelar</button>
+          <button type="button" class="button-danger" id="confirm-accept">Excluir</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/produtos.js"></script>
+    <script src="js/categorias.js"></script>
+    <script src="js/loja.js"></script>
+  </body>
+</html>
