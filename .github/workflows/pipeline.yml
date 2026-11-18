@@ -21,13 +21,24 @@ jobs:
 
       - run: npm ci
 
+      - name: Subir a loja
+        run: |
+          npm run serve > servidor.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -sf -o /dev/null http://127.0.0.1:3000; then
+              echo "Loja no ar"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "O servidor nao subiu"
+          cat servidor.log
+          exit 1
+
       - name: Rodar Cypress
         uses: cypress-io/github-action@v6
         with:
           install: false
-          start: npm run serve
-          wait-on: http://127.0.0.1:3000
-          wait-on-timeout: 60
           browser: chrome
           config: baseUrl=http://127.0.0.1:3000
         env:
