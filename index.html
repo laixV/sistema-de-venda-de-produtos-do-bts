@@ -94,7 +94,7 @@
               <small id="login-password-error" class="field-error" aria-live="polite"></small>
             </div>
 
-            <button type="submit" class="button-primary">Entrar</button>
+            <button id="login" type="submit" class="button-primary">Entrar</button>
             <p class="switch">Ainda não tem conta? <button type="button" data-tab="register">Criar conta</button></p>
           </form>
 
@@ -168,7 +168,7 @@
               <button type="button" data-shop="pedidos">Pedidos</button>
               <button type="button" data-shop="carrinho">Carrinho <span id="cart-count" class="cart-count" hidden>0</span></button>
             </nav>
-            <button type="button" class="button-secondary" data-logout>Sair</button>
+            <button id="sair" type="button" class="button-secondary" data-logout>Sair</button>
           </header>
 
           <div class="customer-content">
@@ -245,19 +245,19 @@
                 </svg>
                 <span>Cadastro de categorias</span>
               </button>
-              <button type="button" data-menu="estoque">
+              <!--<button type="button" data-menu="estoque">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4 8l8-4 8 4-8 4-8-4z"></path>
                   <path d="M4 12l8 4 8-4"></path>
                   <path d="M4 16l8 4 8-4"></path>
                 </svg>
                 <span>Estoque</span>
-              </button>
+              </button> -->
             </nav>
           </aside>
 
           <header class="admin-top">
-            <button type="button" class="button-secondary" data-logout>Sair</button>
+            <button id="sair-admin" type="button" class="button-secondary" data-logout>Sair</button>
           </header>
 
           <div class="admin-content">
@@ -318,7 +318,7 @@
                     <img id="produto-preview" class="preview" alt="" hidden>
 
                     <div class="form-actions">
-                      <button type="submit" class="button-primary">Cadastrar produto</button>
+                      <button id="cadastrar-produto" type="submit" class="button-primary">Cadastrar produto</button>
                       <button type="button" class="button-secondary" id="produto-cancelar" hidden>Cancelar</button>
                     </div>
                   </form>
