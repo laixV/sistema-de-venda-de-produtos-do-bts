@@ -1,0 +1,69 @@
+name: Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  testes:
+    name: CI - Testes Cypress
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Rodar Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
+          start: npx http-server -p 3000 -s
+          wait-on: "http://localhost:3000"
+          wait-on-timeout: 60
+          browser: chrome
+          config: baseUrl=http://localhost:3000
+        env:                                  
+        CYPRESS_EMAIL: ${{ secrets.CYPRESS_EMAIL }}
+        CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
+
+      - name: Salvar screenshots (se falhar)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
+
+  deploy:
+    name: CD - Publicar no GitHub Pages
+    needs: testes
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Montar só os arquivos do site
+        run: |
+          mkdir _site
+          cp -r index.html css js "fotos dos produtos" _site/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
