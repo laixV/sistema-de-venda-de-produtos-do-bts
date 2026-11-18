@@ -25,14 +25,15 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           install: false
-          start: npx http-server -a 127.0.0.1 -p 3000 -s
-          wait-on: "http://127.0.0.1:3000"
+          start: npx --no-install http-server . -p 3000 -a 0.0.0.0
+          wait-on: http://127.0.0.1:3000
           wait-on-timeout: 60
           browser: chrome
           config: baseUrl=http://127.0.0.1:3000
         env:
-          CYPRESS_EMAIL: ${{ secrets.CYPRESS_EMAIL }}
-          CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
+          ADMIN: ${{ secrets.ADMIN }}
+          CLIENTE: ${{ secrets.CLIENTE }}
+          SENHA_PADRAO: ${{ secrets.SENHA_PADRAO }}
 
       - name: Salvar screenshots (se falhar)
         if: failure()
