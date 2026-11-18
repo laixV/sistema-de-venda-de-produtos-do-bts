@@ -10,7 +10,7 @@ import {
 
 describe('Logar na Loja Bangtan House', () => {
     beforeEach(function(){ 
-        cy.visit('/index.html');
+        cy.visit('/');
 
     });
 
