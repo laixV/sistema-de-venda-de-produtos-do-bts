@@ -25,11 +25,11 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           install: false
-          start: npx http-server -p 3000 -s
-          wait-on: "http://localhost:3000"
+          start: npx http-server -a 127.0.0.1 -p 3000 -s
+          wait-on: "http://127.0.0.1:3000"
           wait-on-timeout: 60
           browser: chrome
-          config: baseUrl=http://localhost:3000
+          config: baseUrl=http://127.0.0.1:3000
         env:
           CYPRESS_EMAIL: ${{ secrets.CYPRESS_EMAIL }}
           CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
