@@ -10,7 +10,7 @@ module.exports = defineConfig({
       config.env = process.env;
       return config;
     },
-    baseUrl: process.env.CYPRESS_BASE_URL || 'file:///C:/Users/LAIS-HYPERION/Documents/Projeto%20pessoal/index.html',
+    baseUrl: process.env.CYPRESS_BASE_URL || 'http://127.0.0.1:3000',
     
   },
 });
