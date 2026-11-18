@@ -30,9 +30,9 @@ jobs:
           wait-on-timeout: 60
           browser: chrome
           config: baseUrl=http://localhost:3000
-        env:                                  
-        CYPRESS_EMAIL: ${{ secrets.CYPRESS_EMAIL }}
-        CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
+        env:
+          CYPRESS_EMAIL: ${{ secrets.CYPRESS_EMAIL }}
+          CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
 
       - name: Salvar screenshots (se falhar)
         if: failure()
